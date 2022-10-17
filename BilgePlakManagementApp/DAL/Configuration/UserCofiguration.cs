@@ -16,6 +16,7 @@ namespace BilgePlakManagementApp.DAL.Configuration
             builder.HasKey(p => p.UserId);
 
             builder.Property(p => p.UserName).HasMaxLength(255);
+
             builder.Property(p=>p.Password).HasMaxLength(255);
         }
     }

@@ -19,6 +19,9 @@ namespace BilgePlakManagementApp.DAL.Configuration
 
             builder.Property(p => p.AlbumName).HasMaxLength(255);
 
+            builder.HasOne(p => p.Artist).WithMany(p1 => p1.Albums).HasForeignKey(p2 => p2.ArtistId).OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(p => p.Category).WithMany(p1 => p1.Albums).HasForeignKey(p2 => p2.CategoryId).OnDelete(DeleteBehavior.Restrict);
             
         }
     }

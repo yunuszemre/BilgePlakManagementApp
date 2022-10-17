@@ -69,13 +69,13 @@ namespace BilgePlakManagementApp
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < txtPassword.Text.Length; i++)
-            {
-                if (i )
-                {
+            //for (int i = 0; i < txtPassword.Text.Length; i++)
+            //{
+            //    if (i )
+            //    {
 
-                }
-            }
+            //    }
+            //}
         }
     }
 }

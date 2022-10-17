@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BilgePlakManagementApp.DAL.Entities
 {
-    public class User : IEntity<User>
+    public class User
     {
         public int UserId { get; set; }
 
@@ -21,22 +21,6 @@ namespace BilgePlakManagementApp.DAL.Entities
 
         
 
-        List<User> IEntity<User>.GetAll()
-        {
-            using (PlakDbContext dbContext = new PlakDbContext())
-            {
-                return dbContext.Users.ToList();
-            }
-        }
-
-       
-
-        User IEntity<User>.GetById(int id)
-        {
-            using (PlakDbContext dbContext = new PlakDbContext())
-            {
-                return dbContext.Users.FirstOrDefault(t0 => t0.UserId == id);
-            }
-        }
+        
     }
 }

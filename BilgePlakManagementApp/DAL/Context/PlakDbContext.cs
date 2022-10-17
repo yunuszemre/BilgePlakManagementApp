@@ -1,4 +1,5 @@
-﻿using BilgePlakManagementApp.DAL.Entities;
+﻿using BilgePlakManagementApp.DAL.Configuration;
+using BilgePlakManagementApp.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,13 @@ namespace BilgePlakManagementApp.DAL.Context
     {
         public DbSet<User> Users { get; set; }
 
-        public DbSet<BaseProduct> Products { get; set; }
-
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Artist> Artists { get; set; }
+
+        public DbSet<Album> Albums { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,7 +29,10 @@ namespace BilgePlakManagementApp.DAL.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration();
+            modelBuilder.ApplyConfiguration<Category>(new CategoryConfiguration());           
+            modelBuilder.ApplyConfiguration<Artist>(new ArtistConfiguration());
+            modelBuilder.ApplyConfiguration<Album>(new AlbumConfiguration());
+            modelBuilder.ApplyConfiguration<User>(new UserCofiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
