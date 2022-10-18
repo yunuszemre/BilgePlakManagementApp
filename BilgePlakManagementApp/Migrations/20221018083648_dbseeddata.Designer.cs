@@ -4,6 +4,7 @@ using BilgePlakManagementApp.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BilgePlakManagementApp.Migrations
 {
     [DbContext(typeof(PlakDbContext))]
-    partial class PlakDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221018083648_dbseeddata")]
+    partial class dbseeddata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1450));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2628));
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -66,12 +68,12 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("RecordDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1633));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2817));
 
                     b.Property<DateTime?>("ReleaseDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1755));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2917));
 
                     b.Property<int?>("UnitsInStock")
                         .HasColumnType("int");
@@ -94,10 +96,9 @@ namespace BilgePlakManagementApp.Migrations
                             CriticalLevel = 10,
                             Discontinued = false,
                             Discount = 10f,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3470),
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4613),
                             Price = 100m,
-                            ProductCode = "BM000001",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3473),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4614),
                             UnitsInStock = 10
                         },
                         new
@@ -109,10 +110,9 @@ namespace BilgePlakManagementApp.Migrations
                             CriticalLevel = 10,
                             Discontinued = false,
                             Discount = 10f,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3476),
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4618),
                             Price = 100m,
-                            ProductCode = "CK000001",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3476),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4618),
                             UnitsInStock = 10
                         });
                 });
@@ -132,17 +132,17 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("BirthDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(880));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2000));
 
                     b.Property<DateTime?>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(603));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(1750));
 
                     b.Property<DateTime?>("RecordDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(765));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(1912));
 
                     b.HasKey("ArtistId");
 
@@ -153,15 +153,15 @@ namespace BilgePlakManagementApp.Migrations
                         {
                             ArtistId = 1,
                             ArtistName = "Barış Manço",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(938),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(937)
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2056),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2055)
                         },
                         new
                         {
                             ArtistId = 2,
                             ArtistName = "Cem Karaca",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(940),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(940)
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2058),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(2058)
                         });
                 });
 
@@ -192,8 +192,8 @@ namespace BilgePlakManagementApp.Migrations
                         {
                             CategoryId = 1,
                             CategoryName = "Plak",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(348),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(336)
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(1485),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(1473)
                         });
                 });
 
@@ -227,9 +227,9 @@ namespace BilgePlakManagementApp.Migrations
                         new
                         {
                             UserId = 1,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3727),
+                            ModifiedDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4834),
                             Password = "Asdf_1234",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3725),
+                            RecordDate = new DateTime(2022, 10, 18, 11, 36, 48, 187, DateTimeKind.Local).AddTicks(4833),
                             UserName = "Admin"
                         });
                 });

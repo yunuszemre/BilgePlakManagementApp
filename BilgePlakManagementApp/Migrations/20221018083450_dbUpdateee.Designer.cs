@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BilgePlakManagementApp.Migrations
 {
     [DbContext(typeof(PlakDbContext))]
-    [Migration("20221017215126_init")]
-    partial class init
+    [Migration("20221018083450_dbUpdateee")]
+    partial class dbUpdateee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,21 +54,26 @@ namespace BilgePlakManagementApp.Migrations
                         .HasColumnType("real");
 
                     b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(3836));
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ProductCode")
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("char(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("RecordDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(3993));
 
                     b.Property<DateTime?>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(4093));
 
                     b.Property<int?>("UnitsInStock")
                         .HasColumnType("int");
@@ -97,17 +102,17 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("BirthDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3781));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(1210));
 
                     b.Property<DateTime?>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3385));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(669));
 
                     b.Property<DateTime?>("RecordDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3646));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 11, 34, 50, 4, DateTimeKind.Local).AddTicks(850));
 
                     b.HasKey("ArtistId");
 

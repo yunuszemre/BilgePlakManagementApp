@@ -17,6 +17,8 @@ namespace BilgePlakManagementApp.DAL.Configuration
 
             builder.Property(p => p.CategoryName).HasMaxLength(100);
 
+            builder.HasData(new Category { CategoryId = 1, CategoryName = "Plak", RecordDate = DateTime.Now, ModifiedDate = DateTime.Now });
+
            
         }
     }

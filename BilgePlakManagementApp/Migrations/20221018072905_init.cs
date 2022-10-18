@@ -16,9 +16,9 @@ namespace BilgePlakManagementApp.Migrations
                     ArtistId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ArtistName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3781)),
-                    RecordDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3646)),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 0, 51, 26, 313, DateTimeKind.Local).AddTicks(3385))
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(2112)),
+                    RecordDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(1943)),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(1784))
                 },
                 constraints: table =>
                 {
@@ -62,9 +62,9 @@ namespace BilgePlakManagementApp.Migrations
                 {
                     ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    RecordDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4443)),
+                    RecordDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4351)),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4236)),
                     AlbumName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     Discount = table.Column<float>(type: "real", nullable: true),
                     char100 = table.Column<string>(name: "char(100)", type: "nvarchar(100)", maxLength: 100, nullable: true),

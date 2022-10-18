@@ -25,7 +25,12 @@ namespace BilgePlakManagementApp.DAL.Configuration
 
             builder.Property(p => p.BirthDate).HasDefaultValue(DateTime.Now);
 
-            
+            builder.HasData(
+                new Artist { ArtistId = 1, ArtistName = "Barış Manço", BirthDate = null, RecordDate = DateTime.Now, ModifiedDate = DateTime.Now },
+                 new Artist { ArtistId = 2, ArtistName = "Cem Karaca", BirthDate = null, RecordDate = DateTime.Now, ModifiedDate = DateTime.Now }
+                );
+
+
 
         }
     }

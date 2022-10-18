@@ -18,6 +18,8 @@ namespace BilgePlakManagementApp.DAL.Configuration
             builder.Property(p => p.UserName).HasMaxLength(255);
 
             builder.Property(p=>p.Password).HasMaxLength(255);
+
+            builder.HasData(new User { UserId = 1, UserName = "Admin", Password = "Asdf_1234", RecordDate = DateTime.Now, ModifiedDate = DateTime.Now });
         }
     }
 }

@@ -4,6 +4,7 @@ using BilgePlakManagementApp.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BilgePlakManagementApp.Migrations
 {
     [DbContext(typeof(PlakDbContext))]
-    partial class PlakDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221018072905_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,24 +56,25 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1450));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4236));
 
                     b.Property<decimal?>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ProductCode")
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("char(100)");
 
                     b.Property<DateTime?>("RecordDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1633));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4351));
 
                     b.Property<DateTime?>("ReleaseDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(1755));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(4443));
 
                     b.Property<int?>("UnitsInStock")
                         .HasColumnType("int");
@@ -83,38 +86,6 @@ namespace BilgePlakManagementApp.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Albums");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            AlbumName = "Darısı Başınıza",
-                            ArtistId = 1,
-                            CategoryId = 1,
-                            CriticalLevel = 10,
-                            Discontinued = false,
-                            Discount = 10f,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3470),
-                            Price = 100m,
-                            ProductCode = "BM000001",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3473),
-                            UnitsInStock = 10
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            AlbumName = "Nerede Kalmıştık",
-                            ArtistId = 2,
-                            CategoryId = 1,
-                            CriticalLevel = 10,
-                            Discontinued = false,
-                            Discount = 10f,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3476),
-                            Price = 100m,
-                            ProductCode = "CK000001",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3476),
-                            UnitsInStock = 10
-                        });
                 });
 
             modelBuilder.Entity("BilgePlakManagementApp.DAL.Entities.Artist", b =>
@@ -132,37 +103,21 @@ namespace BilgePlakManagementApp.Migrations
                     b.Property<DateTime?>("BirthDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(880));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(2112));
 
                     b.Property<DateTime?>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(603));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(1784));
 
                     b.Property<DateTime?>("RecordDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(765));
+                        .HasDefaultValue(new DateTime(2022, 10, 18, 10, 29, 5, 703, DateTimeKind.Local).AddTicks(1943));
 
                     b.HasKey("ArtistId");
 
                     b.ToTable("Artists");
-
-                    b.HasData(
-                        new
-                        {
-                            ArtistId = 1,
-                            ArtistName = "Barış Manço",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(938),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(937)
-                        },
-                        new
-                        {
-                            ArtistId = 2,
-                            ArtistName = "Cem Karaca",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(940),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(940)
-                        });
                 });
 
             modelBuilder.Entity("BilgePlakManagementApp.DAL.Entities.Category", b =>
@@ -186,15 +141,6 @@ namespace BilgePlakManagementApp.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            CategoryName = "Plak",
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(348),
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(336)
-                        });
                 });
 
             modelBuilder.Entity("BilgePlakManagementApp.DAL.Entities.User", b =>
@@ -222,16 +168,6 @@ namespace BilgePlakManagementApp.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = 1,
-                            ModifiedDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3727),
-                            Password = "Asdf_1234",
-                            RecordDate = new DateTime(2022, 10, 18, 13, 15, 42, 501, DateTimeKind.Local).AddTicks(3725),
-                            UserName = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("BilgePlakManagementApp.DAL.Entities.Album", b =>
